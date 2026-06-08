@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Own a Perkins Restaurant & Bakery Franchise</title>
+<meta name="description" content="Bring the comfort of Perkins Restaurant & Bakery to your community. Explore the franchise opportunity in America's booming all-day breakfast and bakery segments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#384E46;
+    --green-deep:#2c3e37;
+    --cream:#EDECE6;
+    --yellow:#E69025;
+    --lightgreen:#839566;
+    --ada-green:#8DAA68;
+    --salmon:#CF5B5A;
+    --ink:#2a2a28;
+    --white:#ffffff;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Roboto Condensed',Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    font-size:18px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
+  .script{font-family:'Lobster',cursive;text-transform:none;font-weight:400;letter-spacing:.5px}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* Brand bar (signature retro stripe) */
+  .brandbar{height:14px;width:100%;display:flex}
+  .brandbar span{flex:1}
+  .brandbar .s1{background:var(--green)}
+  .brandbar .s2{background:var(--yellow)}
+  .brandbar .s3{background:var(--salmon)}
+  .brandbar .s4{background:var(--lightgreen)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--cream);box-shadow:0 1px 0 rgba(56,78,70,.12)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .nav img{height:42px;width:auto}
+  .nav ul{list-style:none;display:flex;gap:26px;align-items:center}
+  .nav a{text-decoration:none;font-weight:500;text-transform:uppercase;font-size:15px;letter-spacing:.04em;color:var(--green)}
+  .nav a:hover{color:var(--yellow)}
+  .btn{
+    display:inline-block;background:var(--yellow);color:var(--green-deep);
+    text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    padding:13px 26px;border-radius:4px;border:none;cursor:pointer;font-size:15px;
+    transition:transform .12s ease, background .2s ease;
+  }
+  .btn:hover{background:#f2a23c;transform:translateY(-1px)}
+  .btn-green{background:var(--green);color:var(--cream)}
+  .btn-green:hover{background:var(--green-deep)}
+  .nav .nav-cta{font-size:14px;padding:11px 20px}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--green)}
+  .menu-toggle svg{width:30px;height:30px}
+
+  /* Hero */
+  .hero{
+    position:relative;color:var(--white);
+    background:linear-gradient(rgba(30,42,38,.62),rgba(30,42,38,.72)),url('assets/hero-exterior.jpg') center/cover no-repeat;
+    padding:120px 0 130px;text-align:center;
+  }
+  .hero .script{color:var(--yellow);font-size:clamp(28px,5vw,46px);display:block;margin-bottom:6px}
+  .hero h1{font-size:clamp(38px,7vw,76px);text-shadow:0 2px 18px rgba(0,0,0,.35);max-width:14ch;margin:0 auto}
+  .hero p{font-size:clamp(18px,2.3vw,23px);max-width:600px;margin:22px auto 34px;text-shadow:0 1px 8px rgba(0,0,0,.4);font-weight:400}
+  .hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-weight:700;font-size:14px;color:var(--yellow)}
+
+  /* Stat strip */
+  .stats{background:var(--green);color:var(--cream);padding:46px 0}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stats .num{font-size:clamp(34px,5vw,54px);font-weight:700;color:var(--yellow);line-height:1}
+  .stats .lab{font-size:15px;text-transform:uppercase;letter-spacing:.06em;margin-top:8px;color:var(--cream)}
+
+  /* Sections */
+  section{padding:84px 0}
+  .section-head{text-align:center;max-width:760px;margin:0 auto 54px}
+  .section-head .script{color:var(--yellow);font-size:clamp(24px,3.4vw,34px);display:block}
+  .section-head h2{font-size:clamp(30px,4.4vw,46px);color:var(--green)}
+  .section-head p{margin-top:16px;color:#4a4a46;font-size:19px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .split img{border-radius:8px;box-shadow:0 14px 36px rgba(56,78,70,.18);width:100%;height:100%;object-fit:cover;max-height:520px}
+  .split h2{color:var(--green);font-size:clamp(28px,4vw,42px);margin-bottom:18px}
+  .split .script{color:var(--yellow);font-size:clamp(22px,3vw,30px);display:block;margin-bottom:2px}
+  .split p{margin-bottom:16px;color:#43433f}
+  .split.rev .txt{order:2}
+  .split.rev .media{order:1}
+
+  /* Why / cards */
+  .why{background:var(--white)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:var(--cream);border-radius:10px;padding:34px 30px;border-top:6px solid var(--yellow)}
+  .card:nth-child(3n+1){border-top-color:var(--green)}
+  .card:nth-child(3n+2){border-top-color:var(--yellow)}
+  .card:nth-child(3n+3){border-top-color:var(--salmon)}
+  .card .ico{width:50px;height:50px;margin-bottom:16px;color:var(--green)}
+  .card h3{font-size:22px;color:var(--green);margin-bottom:10px}
+  .card p{font-size:16.5px;color:#4a4a46}
+
+  /* Investment */
+  .invest{background:var(--green);color:var(--cream)}
+  .invest .section-head h2{color:var(--cream)}
+  .invest .section-head .script{color:var(--yellow)}
+  .invest .section-head p{color:#d9d8d0}
+  .invest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:40px}
+  .istat{background:rgba(255,255,255,.06);border:1px solid rgba(237,236,230,.18);border-radius:10px;padding:30px;text-align:center}
+  .istat .num{font-size:clamp(28px,3.6vw,40px);color:var(--yellow);font-weight:700;line-height:1.05}
+  .istat .lab{margin-top:10px;font-size:16px;color:var(--cream);text-transform:uppercase;letter-spacing:.04em}
+  .invest .note{text-align:center;font-size:15px;color:#cfceC6;max-width:760px;margin:0 auto}
+
+  /* Steps */
+  .steps{counter-reset:step}
+  .steplist{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:20px}
+  .step{position:relative;padding-top:62px}
+  .step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    position:absolute;top:0;left:0;font-family:'Roboto Condensed';font-weight:700;
+    font-size:30px;color:var(--cream);background:var(--green);width:50px;height:50px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .step h3{font-size:19px;color:var(--green);margin-bottom:8px}
+  .step p{font-size:15.5px;color:#4a4a46}
+
+  /* Candidates */
+  .cand{background:var(--white)}
+  .cand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .cand-grid .card{border-top:none;border-left:5px solid var(--lightgreen);padding:26px 24px}
+  .cand-grid .card h3{font-size:19px}
+
+  /* CTA / form */
+  .cta-final{
+    background:linear-gradient(rgba(44,62,55,.92),rgba(44,62,55,.94)),url('assets/interior.jpg') center/cover no-repeat;
+    color:var(--cream);
+  }
+  .form-card{background:var(--cream);color:var(--ink);border-radius:14px;padding:42px;max-width:720px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+  .form-card h2{color:var(--green);font-size:clamp(26px,3.6vw,38px);text-align:center}
+  .form-card .script{display:block;text-align:center;color:var(--yellow);font-size:28px;margin-bottom:6px}
+  .form-card p.sub{text-align:center;color:#54544f;margin:10px 0 26px;font-size:17px}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;margin-bottom:16px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--green);margin-bottom:6px}
+  .field input,.field select,.field textarea{
+    font-family:inherit;font-size:16px;padding:12px 14px;border:1.5px solid #c7c6bd;border-radius:6px;background:var(--white);color:var(--ink);
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
+  .form-card .btn{width:100%;font-size:17px;padding:16px;margin-top:6px}
+  .form-note{font-size:13px;color:#6b6b64;text-align:center;margin-top:14px}
+  .form-success{display:none;text-align:center;padding:24px}
+  .form-success.show{display:block}
+  .form-success h3{color:var(--green);font-size:26px;margin-bottom:10px}
+
+  /* Footer */
+  footer{background:var(--green-deep);color:var(--cream);padding:56px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start}
+  footer img{height:46px;margin-bottom:16px}
+  footer p{font-size:15.5px;color:#cdccc4;margin-bottom:8px}
+  footer h4{text-transform:uppercase;font-size:15px;letter-spacing:.06em;color:var(--yellow);margin-bottom:14px}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:9px}
+  footer a{text-decoration:none;color:#cdccc4;font-size:15.5px}
+  footer a:hover{color:var(--white)}
+  .foot-bottom{border-top:1px solid rgba(237,236,230,.16);margin-top:40px;padding-top:22px;text-align:center;font-size:13.5px;color:#a9a89f}
+
+  /* Responsive */
+  @media (max-width:900px){
+    .nav ul{display:none}
+    .nav ul.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--cream);padding:18px 24px;gap:16px;box-shadow:0 12px 24px rgba(0,0,0,.12)}
+    .menu-toggle{display:block}
+    .stats .grid{grid-template-columns:repeat(2,1fr);gap:32px}
+    .split{grid-template-columns:1fr;gap:28px}
+    .split.rev .txt{order:1}.split.rev .media{order:2}
+    .cards{grid-template-columns:1fr}
+    .invest-grid{grid-template-columns:1fr}
+    .steplist{grid-template-columns:1fr 1fr}
+    .cand-grid{grid-template-columns:1fr 1fr}
+    .fgrid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+  }
+  @media (max-width:540px){
+    .cand-grid{grid-template-columns:1fr}
+    .steplist{grid-template-columns:1fr}
+    .form-card{padding:28px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="brandbar"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span></div>
+
+<header>
+  <div class="nav">
+    <a href="#top"><img src="assets/logo-green.png" alt="Perkins Restaurant & Bakery"></a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('navmenu').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul id="navmenu">
+      <li><a href="#opportunity">Opportunity</a></li>
+      <li><a href="#why">Why Perkins</a></li>
+      <li><a href="#investment">Investment</a></li>
+      <li><a href="#steps">Process</a></li>
+      <li><a href="#inquire" class="btn nav-cta">Request Info</a></li>
+    </ul>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <span class="script">Putting the comfort in comfort food</span>
+    <h1>Own a Piece of an American Favorite</h1>
+    <p>Bring the all-day breakfast and fresh-baked bakery that families have loved since 1958 to your community.</p>
+    <div class="cta-row">
+      <a href="#inquire" class="btn">Request Franchise Info</a>
+      <a href="#opportunity" class="btn btn-green">Explore the Opportunity</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats" style="padding-top:0">
+  <div class="brandbar" style="margin-bottom:46px"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span></div>
+  <div class="wrap">
+    <div class="grid">
+      <div><div class="num">1958</div><div class="lab">Serving families since</div></div>
+      <div><div class="num">300+</div><div class="lab">Restaurants open &amp; in development</div></div>
+      <div><div class="num">2</div><div class="lab">Booming segments &mdash; breakfast &amp; bakery</div></div>
+      <div><div class="num">All&nbsp;Day</div><div class="lab">Breakfast, lunch, dinner &amp; late night</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="opportunity" class="opportunity">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <span class="script">A winning opportunity</span>
+        <h2>The Perfect Partner Is Like the Perfect Pancake</h2>
+        <p>Perkins started as a single pancake house in 1958 and grew into one of America's most recognizable family-dining and bakery brands. Through more than six decades, we've kept evolving our menu and our restaurants &mdash; while never sacrificing the quality, value, and warm service that keep guests coming back.</p>
+        <p>Our franchise opportunity lets qualified operators leverage that legacy into a winning business strategy, backed by a development team committed to helping you succeed in two of the strongest segments in dining.</p>
+        <a href="#inquire" class="btn">Start the Conversation</a>
+      </div>
+      <div class="media"><img src="assets/interior.jpg" alt="Modern Perkins restaurant interior with bakery case"></div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section" style="background:var(--white)">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="txt">
+        <span class="script">The most popular meal of the day</span>
+        <h2>All-Day Breakfast, Built-In Bakery</h2>
+        <p>Roughly 70% of Americans want breakfast served any time of day &mdash; and at Perkins they can order off our entire menu morning, noon, or night. Breakfast makes up the majority of our sales, and because those ingredients cost less, franchisees often see stronger margins than lunch- and dinner-only concepts.</p>
+        <p>Then there's the bakery counter. Fresh pies, muffins, and cookies give guests a reason to take Perkins home &mdash; a true differentiator that adds a second revenue stream most breakfast concepts simply don't have.</p>
+      </div>
+      <div class="media"><img src="assets/pancakes.jpg" alt="Stack of Perkins pancakes with fresh berries and whipped cream"></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="script">What makes us shine</span>
+      <h2>Why Operators Choose Perkins</h2>
+      <p>A recognized brand, multiple revenue streams, and a support team that's helped hundreds of franchises open their doors.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.6 6.6L21 9.2l-5 4.3L17.5 21 12 17.3 6.5 21 8 13.5 3 9.2l6.4-.6L12 2z"/></svg>
+        <h3>A Recognized Brand</h3>
+        <p>Generations have grown up on Perkins. You'll benefit from instant recognition and built-in loyalty the day you open your doors.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+        <h3>Multiple Revenue Streams</h3>
+        <p>Dine-in, online ordering, delivery, and an in-house bakery let you capture two booming segments under one roof.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h3>Strong Support Team</h3>
+        <p>From your business model to site selection, design, construction, and grand opening, our leadership has decades of experience getting franchises up and running.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Popular Menu, Any Hour</h3>
+        <p>A finely tuned menu with mass appeal means breakfast, lunch, dinner, and late-night guests all find something to love.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+        <h3>Available Territories</h3>
+        <p>Desirable, developing markets are open across the continental U.S. and Canada &mdash; many likely near you.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7h-7L9 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+        <h3>Proven Value Perception</h3>
+        <p>Comfortable meals at a fair price &mdash; "happy stomach, happy wallet" &mdash; keep guests loyal in every economy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <span class="script">A true differentiator</span>
+        <h2>The Bakery That Sets Us Apart</h2>
+        <p>Pies, muffins, cookies, and cakes made to take home turn a single visit into two purchases. Our in-store bakery taps a multi-billion-dollar bakery-café market on top of the breakfast segment &mdash; giving Perkins franchisees an edge other concepts can't match.</p>
+        <p>It's the kind of detail that earns Perkins recognition year after year, from Top Family Dining Brands to Best Diner &amp; Breakfast Franchises.</p>
+      </div>
+      <div class="media"><img src="assets/pie-case.jpg" alt="Perkins bakery case filled with fresh cream pies"></div>
+    </div>
+  </div>
+</section>
+
+<section id="investment" class="invest">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="script">Now serving value</span>
+      <h2>What's the Investment?</h2>
+      <p>A comprehensive, transparent cost breakdown means fewer surprises &mdash; so you can stay focused on your goals.</p>
+    </div>
+    <div class="invest-grid">
+      <div class="istat"><div class="num">$1.52M&ndash;$2.49M</div><div class="lab">Estimated total investment</div></div>
+      <div class="istat"><div class="num">$40,000</div><div class="lab">Initial franchise fee</div></div>
+      <div class="istat"><div class="num">4,200&ndash;6,000</div><div class="lab">Ideal site square footage</div></div>
+    </div>
+    <p class="note">Estimated total includes commercial lease, equipment, opening inventory, furniture &amp; fixtures, signage, initial marketing, and more. Figures are estimates drawn from Perkins franchise information; full details are provided in the Franchise Disclosure Document (FDD). This is not an offer to sell a franchise.</p>
+  </div>
+</section>
+
+<section id="steps" class="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="script">Your journey to ownership</span>
+      <h2>What Are the Next Steps?</h2>
+      <p>A clear, guided path from first conversation to grand opening &mdash; and well beyond.</p>
+    </div>
+    <div class="steplist">
+      <div class="step"><h3>Initial Call</h3><p>We share the franchise information guide and explore whether Perkins is a fit for you and your market.</p></div>
+      <div class="step"><h3>Review the Details</h3><p>You review the FDD; we assess your market, finances, and background together.</p></div>
+      <div class="step"><h3>Mutual Approval</h3><p>With a clear road ahead, you sign the franchise agreement and pay your initial fee.</p></div>
+      <div class="step"><h3>Find &amp; Build</h3><p>We guide site selection and build-out while you master our model through initial training.</p></div>
+      <div class="step"><h3>Grand Opening</h3><p>We help launch your marketing and support your operations as you grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cand">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="script">Are you the perfect pancake?</span>
+      <h2>Who We Partner With</h2>
+      <p>It doesn't take restaurant experience to open a Perkins. We work with franchisees from all walks of life.</p>
+    </div>
+    <div class="cand-grid">
+      <div class="card"><h3>Multi-Unit Operators</h3><p>Experienced operators ready to add a proven, segment-leading brand to their portfolio.</p></div>
+      <div class="card"><h3>Restaurant Owners</h3><p>Owners looking to convert or expand &mdash; our model is simple to adopt with strong upside.</p></div>
+      <div class="card"><h3>Experienced Investors</h3><p>Investors entering the restaurant space, including those who prefer a more hands-off role.</p></div>
+      <div class="card"><h3>First-Time Franchisees</h3><p>Motivated entrepreneurs ready to go into business for themselves with comprehensive support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="inquire" class="cta-final">
+  <div class="wrap">
+    <div class="form-card">
+      <span class="script">Let's talk</span>
+      <h2>Request Franchise Information</h2>
+      <p class="sub">Tell us a little about yourself and our development team will reach out with everything you need to evaluate the opportunity.</p>
+      <form id="leadform" onsubmit="return submitLead(event)">
+        <div class="fgrid">
+          <div class="field"><label for="first">First Name</label><input id="first" name="first" required></div>
+          <div class="field"><label for="last">Last Name</label><input id="last" name="last" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
+          <div class="field"><label for="market">Target Market (City/State)</label><input id="market" name="market" placeholder="e.g. Tampa, FL"></div>
+          <div class="field"><label for="capital">Liquid Capital Available</label>
+            <select id="capital" name="capital">
+              <option value="">Select a range</option>
+              <option>Under $500K</option>
+              <option>$500K &ndash; $1M</option>
+              <option>$1M &ndash; $2M</option>
+              <option>$2M+</option>
+            </select>
+          </div>
+          <div class="field full"><label for="bg">Tell us about your background</label><textarea id="bg" name="bg" rows="3" placeholder="Restaurant ownership, multi-unit experience, investment goals…"></textarea></div>
+        </div>
+        <button type="submit" class="btn">Request Information</button>
+        <p class="form-note">By submitting, you agree to be contacted about Perkins franchise opportunities. This site is for information only and is not an offer to sell a franchise.</p>
+      </form>
+      <div class="form-success" id="success">
+        <h3>Thank you &mdash; we'll be in touch!</h3>
+        <p>A member of our franchise development team will reach out shortly. In the meantime, feel free to call us directly using the details below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="assets/logo-white.png" alt="Perkins Restaurant & Bakery">
+        <p>Comfortable meals that are there for you whenever you need them &mdash; and a franchise opportunity built on more than 60 years of comfort food.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#opportunity">The Opportunity</a></li>
+          <li><a href="#why">Why Perkins</a></li>
+          <li><a href="#investment">Investment</a></li>
+          <li><a href="#steps">The Process</a></li>
+          <li><a href="#inquire">Request Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Franchise Development</h4>
+        <p>Natalie Hansen<br>Director of Franchise Sales</p>
+        <p><a href="tel:+17202123016">(720) 212-3016</a></p>
+        <p><a href="mailto:nhansen@ascenthm.com">nhansen@ascenthm.com</a></p>
+        <p><a href="https://perkinsfranchising.com" target="_blank" rel="noopener">perkinsfranchising.com</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      &copy; <span id="yr"></span> Perkins, LLC. Perkins Restaurant &amp; Bakery is a registered trademark. This communication is for informational purposes only and does not constitute an offer to sell or the solicitation of an offer to buy a franchise. Offerings are made only by Franchise Disclosure Document.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // close mobile menu on link click
+  document.querySelectorAll('#navmenu a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('navmenu').classList.remove('open'); });
+  });
+  function submitLead(e){
+    e.preventDefault();
+    document.getElementById('leadform').style.display='none';
+    document.getElementById('success').classList.add('show');
+    document.getElementById('success').scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+</script>
+</body>
+</html>
